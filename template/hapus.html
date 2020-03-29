@@ -1,0 +1,29 @@
+<html> 
+<head> 
+  <title>Hapus Mahasiswa - UDB</title> 
+</head> 
+<body> 
+  <h2>HAPUS MAHASISWA</h2>   <a href="/">Batal</a> 
+  <hr> 
+  <form method="POST" action="/hapus">            
+     <label>NIM: <br> 
+        <input name="nim" type="text" value="{{ (index .Data 0).Nim }}" readonly="readonly"> 
+      </label> 
+      <br> 
+      <label>Nama: <br> 
+        <input name="nama" type="text" value="{{ (index .Data 0).Nama }}" readonly="readonly"> 
+      </label> 
+      <br> 
+      <label>Program Studi: <br> 
+        <input name="progdi" type="text" value="{{ (index .Data 0).Progdi }}" readonly="readonly"> 
+      </label> 
+      <br> 
+      <label>Semester: <br> 
+        <input name="smt" type="number" value="{{ (index .Data 0).Smt }}" > 
+      </label> 
+      <br> 
+      <input type="submit" value="Hapus" /> 
+  </form> 
+ 
+</body> 
+</html> 

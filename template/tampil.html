@@ -1,0 +1,36 @@
+<html> 
+    <head> 
+        <title>Tampil Mahasiswa - UDB</title>
+    </head> 
+    <body> 
+	     	<h2>DATA MAHASISWA</h2> 
+	     	<p>{{ .Pesan }}</p> 
+	     	<a href="/?aksi=tambah"><button>Tambah</button></a> 
+	     	<table border="1" cellpadding="3" cellspacing="0"> 
+	     	 	<thead> 
+	     	 	 	<tr> 
+	     	 	 	 	<th>NIM</th> 
+	     	 	 	 	<th>Nama</th> 
+	     	 	 	 	<th>Program Studi</th> 
+	     	 	 	 	<th>Semester</th> 
+	     	 	 	 	<th>Aksi</th> 
+	     	 	 	</tr> 
+	     	 	</thead> 
+	     	 	<tbody> 
+	       	{{ range $key, $value := .Data }} 
+	      	 	<tr> 
+	      	 	 	<td>{{ $value.Nim }}</td> 
+	      	 	 	<td>{{ $value.Nama }}</td> 
+	      	 	 	<td>{{ $value.Progdi }}</td> 
+	      	 	 	<td>{{ $value.Smt }}</td> 
+	      	 	 	<td>  
+	      	 	 	 	<a href="/?aksi=ubah&nim={{ $value.Nim }}">Ubah</a> 
+	      	 	 	 	<a href="/?aksi=hapus&nim={{ $value.Nim }}">Hapus</a> 
+	      	 	 	</td> 
+      	 	 	 
+	      	 	</tr> 
+	  	 	{{ end }} 
+	  	 	</tbody> 
+        </table> 
+	</body>
+	</html> 
